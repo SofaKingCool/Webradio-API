@@ -7,9 +7,6 @@ class auth
         // Use keys array from config.php
         global $keys;
 
-        // Read key from POST field
-        $key = post("key");
-
         // Check for default configuration
         if (in_array("PLEASE-CHANGE-THIS-RANDOM-KEY", $keys, true)) {
             throw new Exception("Found default access key in configuration");
