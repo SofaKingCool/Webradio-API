@@ -4,10 +4,6 @@
  * packed into their own class.
  */
 
-function post($name) {
-    return $_POST[$name] ?? null;
-}
-
 function input($name) {
     return $_GET[$name] ?? null;
 }

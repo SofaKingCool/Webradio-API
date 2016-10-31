@@ -12,7 +12,7 @@ class auth
             throw new Exception("Found default access key in configuration");
         }
 
-        // Search for POST field "key" in keys
-        return !in_array(post("key"), $keys, true);
+        // Search for GET field "key" in keys
+        return !in_array(input("key"), $keys, true);
     }
 }

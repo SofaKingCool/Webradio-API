@@ -34,6 +34,6 @@ class service
 
     public static function name()
     {
-        return post("service");
+        return input("service");
     }
 }
