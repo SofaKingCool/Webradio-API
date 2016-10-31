@@ -1,9 +1,9 @@
 # Webradio-API
-A multi-service orientied search and streaming API for your Multi Theft Auto server
+A minimal multi-service orientied search and streaming API for your Multi Theft Auto server
 
 ## Getting Started
 ### Prerequisites
-You need a web server like *nginx* or *apache* with PHP. The web server should serve content from the `public` directory and not anywhere else to reduce the attack space to a minimum. Due to the early stages of the project you are forced to use `>= PHP 7` because the code uses e.g. the *null coalesce* operator, which was introduced in PHP 7.
+You need a web server like *nginx* or *apache* with PHP. The web server should serve content from the `public` directory and not anywhere else to reduce the attack margin to a minimum. Due to the early stages of the project you are forced to use `>= PHP 7` because the code uses e.g. the *null coalesce* operator, which was first introduced in PHP 7.
 
 ### Installing
 Clone the repository to your disk, copy the `config.example.php` file as `config.php` in the *root*-directory and open it in an editor of your choice.
@@ -21,13 +21,13 @@ Finally, you should add your private API keys for `YouTube`, `Soundcloud` and `J
 
 **Note:** You MUST configure your webserver to point to the `public` directory of the application.
 
-### Development
-You should modify the `$debug_mode` variable in `config.php` to *true* if you want to receive the fine details of the exception whenever your application drops an `Out of Order` error.
-
 ### Shortcuts for API registration
 * [YouTube](https://developers.google.com/youtube/registering_an_application#Create_API_Keys)
 * [Soundcloud](http://soundcloud.com/you/apps)
 * [Jamendo](https://devportal.jamendo.com/admin/applications)
+
+### Development
+You should set the `$debug_mode` variable in `config.php` to *true* if you want to receive the fine details of the exception whenever your application drops an `Out of Order` error.
 
 ## Usage
 ### Search
@@ -40,7 +40,7 @@ You should modify the `$debug_mode` variable in `config.php` to *true* if you wa
 ### Stream
 Streaming will be supported in the future.
 
-## Example
+## Examples
 ### YouTube
 `/search.php?query=Bohemian+Rhapsody&service=YouTube&key=<a key from $keys>`
 ```JSON
