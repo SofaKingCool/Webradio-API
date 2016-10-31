@@ -21,7 +21,7 @@ Finally, you should add your private API keys for `YouTube`, `Soundcloud` and `J
 
 **Note:** You MUST configure your webserver to point to the `public` directory of the application.
 
-### Shortcuts for API registration
+#### Shortcuts for API registration
 * [YouTube](https://developers.google.com/youtube/registering_an_application#Create_API_Keys)
 * [Soundcloud](http://soundcloud.com/you/apps)
 * [Jamendo](https://devportal.jamendo.com/admin/applications)
