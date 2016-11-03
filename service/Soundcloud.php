@@ -25,7 +25,7 @@ class Soundcloud
 
         foreach ($songs as $song) {
             $results[] = [
-                "id" => $song->id,
+                "id" => strval($song->id),
                 "title" => $song->title,
                 "duration" => floor($song->duration / 1000)
             ];
