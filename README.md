@@ -1,5 +1,5 @@
 # Webradio-API
-A minimal multi-service orientied search and streaming API for your Multi Theft Auto server
+A minimal multi-service oriented search and streaming API for your Multi Theft Auto server
 
 ## Getting Started
 ### Prerequisites
@@ -38,7 +38,11 @@ You should set the `$debug_mode` variable in `config.php` to *true* if you want 
 `/search.php?query=Bob+Dylan&service=MP3Library&key=<a key from $keys>`  
 
 ### Stream
-Streaming will be supported in the future.
+`/stream.php?key=<a key from $keys>&service=Soundcloud&id=<song id>`  
+`/stream.php?key=<a key from $keys>&service=Jamendo&id=<song id>`  
+`/stream.php?key=<a key from $keys>&service=MyFreeMP3&id=<song id>`  
+`/stream.php?key=<a key from $keys>&service=MP3Library&id=<song id>`  
+*Note: YouTube is not supported yet.*  
 
 ## Examples
 ### YouTube
@@ -66,17 +70,17 @@ Streaming will be supported in the future.
 ```JSON
 [
   {
-    "id": 230155983,
+    "id": "230155983",
     "title": "Hello - Adele",
     "duration": 300
   },
   {
-    "id": 229791977,
+    "id": "229791977",
     "title": "Adele - Hello (Cover by Lianna Joy)",
     "duration": 295
   },
   {
-    "id": 230335097,
+    "id": "230335097",
     "title": "Hello ❀ Adele",
     "duration": 294
   },
