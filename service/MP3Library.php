@@ -19,7 +19,7 @@ class MP3Library
             $results[] = [
                 "id" => $song->hash,
                 "title" => $song->track . " - " . $song->artist,
-                "duration" => $song->length,
+                "duration" => intval($song->length),
             ];
         }
 
