@@ -31,11 +31,11 @@ You should set the `$debug_mode` variable in `config.php` to *true* if you want 
 
 ## Usage
 ### Search
-`/search.php?query=Bohemian+Rhapsody&service=YouTube&key=<a key from $keys>`  
-`/search.php?query=Adele+Hello&service=Soundcloud&key=<a key from $keys>`  
-`/search.php?query=Sunshine&service=Jamendo&key=<a key from $keys>`  
-`/search.php?query=We+Right+Here&service=MyFreeMP3&key=<a key from $keys>`  
-`/search.php?query=Bob+Dylan&service=MP3Library&key=<a key from $keys>`  
+`/search.php?key=<a key from $keys>&service=YouTube&query=Bohemian+Rhapsody`  
+`/search.php?key=<a key from $keys>&service=Soundcloud&query=Adele+Hello`  
+`/search.php?key=<a key from $keys>&service=Jamendo&query=Sunshine`  
+`/search.php?key=<a key from $keys>&service=MyFreeMP3&query=We+Right+Here`  
+`/search.php?key=<a key from $keys>&service=MP3Library&query=Bob+Dylan`  
 
 ### Stream
 `/stream.php?key=<a key from $keys>&service=Soundcloud&id=<song id>`  
