@@ -4,8 +4,8 @@ class MP3Library
 {
     public function search($query)
     {
-        // http://cn{number}.mp3li.org
-        $url = "http://cn7.mp3li.org/audio.search/?";
+        $number = rand(1, 8);
+        $url = "http://cn{$number}.mp3li.org/audio.search/?";
 
         $url .= http_build_query([
             "query" => $query,
@@ -19,14 +19,52 @@ class MP3Library
             $results[] = [
                 "id" => $song->hash,
                 "title" => $song->track . " - " . $song->artist,
-                "duration" => intval($song->length),
+                "duration" => $song->length,
             ];
         }
 
         return $results;
     }
 
-    /*
-        http://cn7.mp3li.org/audio.getlinks/?hash=1b4c5e994b4952166895651d32bb7941&format=json
-    */
+    public function url($hash)
+    {
+        $number = rand(1, 8);
+        $url = "http://cn{$number}.mp3li.org/audio.getlinks/?";
+
+        $url .= http_build_query([
+            "hash" => $hash,
+            "format" => "json",
+        ]);
+
+        $body = json_decode(file_get_contents($url));
+        $direct = [];
+        $ported = [];
+
+        // There are two kind types: "d" (direct?) and "p" (ported)?
+        foreach ($body->result as $source) {
+            if ($source->kind != "d") {
+                $ported[] = $source->url;
+            } else {
+                $direct[] = $source->url;
+            }
+        }
+
+        // Try to find a healthy direct link
+        foreach ($direct as $url) {
+            if (alive($url)) {
+                return $url;
+            }
+        }
+
+        // Otherwise try to find a working ported link
+        foreach ($ported as $url) {
+            $body = json_decode(file_get_contents($url));
+
+            if ($body && isset($body->result) && alive($body->result->url)) {
+                return $body->result->url;
+            }
+        }
+
+        return false;
+    }
 }

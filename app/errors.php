@@ -8,3 +8,4 @@
 define("ERRNO_NO_AUTH",             2);
 define("ERRNO_SERVICE_NOT_FOUND",   3);
 define("ERRNO_BAD_QUERY",           4);
+define("ERRNO_BAD_ID",              5);

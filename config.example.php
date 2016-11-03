@@ -8,6 +8,10 @@ $keys = [
     "PLEASE-CHANGE-THIS-RANDOM-KEY",
 ];
 
+// Maximum cache file age in seconds
+$cacheMaxSearchAge = 3 * 24 * 3600; // 3 days
+$cacheMaxStreamAge = 2 * 3600; // 2 hours
+
 // List of services you support in this application
 $services = [
     "YouTube",

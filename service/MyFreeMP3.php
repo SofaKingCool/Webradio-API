@@ -34,4 +34,9 @@ class MyFreeMP3
 
         return $results;
     }
+
+    public function url($id)
+    {
+        return "http://s.myfreemp3.space/stream.php?q=" . $id . "_/";
+    }
 }

@@ -22,7 +22,7 @@ set_exception_handler(function ($exception) {
             "errno" => $exception->getCode(),
             "file" => $exception->getFile(),
             "line" => $exception->getLine(),
-        ]);
+        ], JSON_UNESCAPED_SLASHES);
     } else {
         echo json_encode([ "error" => "Out of Order", "errno" => ERRNO_INTERNAL_EXCEPTION ]);
     }

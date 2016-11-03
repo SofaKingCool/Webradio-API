@@ -33,4 +33,22 @@ class Soundcloud
 
         return $results;
     }
+
+    public function url($id)
+    {
+        $url = "http://api.soundcloud.com/tracks/{$id}/stream?";
+
+        $url .= http_build_query([
+            "client_id" => $this->client_id,
+        ]);
+
+        $headers = get_headers($url, 1);
+        $httpStatus = $headers[0];
+
+        if (!isset($headers["Location"]) || stripos($httpStatus, "302 Found") === false) {
+            return false;
+        }
+
+        return $headers["Location"];
+    }
 }

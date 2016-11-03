@@ -34,4 +34,9 @@ class YouTube
 
         return $results;
     }
+
+    public function url($id)
+    {
+        return false;
+    }
 }

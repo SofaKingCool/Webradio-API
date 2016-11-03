@@ -1,2 +1,8 @@
 
 /config.php
+
+/storage/stream/*
+!/storage/stream/.gitkeep
+
+/storage/search/*
+!/storage/search/.gitkeep
