@@ -26,8 +26,10 @@ $songs = $service->search($query);
 // Format song list as JSON
 $output = json_encode($songs, JSON_UNESCAPED_SLASHES);
 
-// Save output in cache
-$cache->save($output);
+// Save output in cache (if there is a song)
+if (isset($songs[0])) {
+    $cache->save($output);
+}
 
 // Present songs to client
 echo $output;
