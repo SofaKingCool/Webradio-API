@@ -42,11 +42,11 @@ Make sure your webserver user has enough permissions for writing in the **/stora
 `/search.php?key=<a key from $keys>&service=MP3Library&query=Bob+Dylan`  
 
 ### Stream
+`/stream.php?key=<a key from $keys>&service=YouTube&id=<song id>`  
 `/stream.php?key=<a key from $keys>&service=Soundcloud&id=<song id>`  
 `/stream.php?key=<a key from $keys>&service=Jamendo&id=<song id>`  
 `/stream.php?key=<a key from $keys>&service=MyFreeMP3&id=<song id>`  
 `/stream.php?key=<a key from $keys>&service=MP3Library&id=<song id>`  
-*Note: YouTube is not supported yet.*  
 
 ## Examples
 ### YouTube
