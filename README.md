@@ -29,6 +29,10 @@ Finally, you should add your private API keys for `YouTube`, `Soundcloud` and `J
 ### Development
 You should set the `$debug_mode` variable in `config.php` to *true* if you want to receive the fine details of the exception whenever your application drops an `Out of Order` error.
 
+### Troubleshooting
+#### Permission denied for mkdir()
+Make sure your webserver user has enough permissions for writing in the **/storage** (sub-)directories.
+
 ## Usage
 ### Search
 `/search.php?key=<a key from $keys>&service=YouTube&query=Bohemian+Rhapsody`  
