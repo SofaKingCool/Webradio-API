@@ -18,6 +18,10 @@ class cache
             global $cacheMaxStreamAge;
             $this->maxAge = $cacheMaxStreamAge;
         }
+        else if ($method == "misc") {
+            global $cacheMaxMiscAge;
+            $this->maxAge = $cacheMaxMiscAge;
+        }
 
         // Create directory for service in cache storage
         $service = service::name();

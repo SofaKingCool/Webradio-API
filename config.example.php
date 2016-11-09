@@ -11,6 +11,7 @@ $keys = [
 // Maximum cache file age in seconds
 $cacheMaxSearchAge = 3 * 24 * 3600; // 3 days
 $cacheMaxStreamAge = 2 * 3600; // 2 hours
+$cacheMaxMiscAge = 7 * 24 * 3600; // 7 days
 
 // List of services you support in this application
 $services = [

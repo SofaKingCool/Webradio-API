@@ -64,8 +64,7 @@ Make sure your webserver user has enough permissions for writing in the **/stora
   {
     "id": "irp8CNj9qBI",
     "title": "Queen - Bohemian Rhapsody"
-  },
-  ...
+  }
 ]
 ```
 
@@ -87,8 +86,7 @@ Make sure your webserver user has enough permissions for writing in the **/stora
     "id": "230335097",
     "title": "Hello ❀ Adele",
     "duration": 294
-  },
-  ...
+  }
 ]
 ```
 

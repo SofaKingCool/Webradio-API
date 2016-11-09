@@ -6,3 +6,6 @@
 
 /storage/search/*
 !/storage/search/.gitkeep
+
+/storage/misc/*
+!/storage/misc/.gitkeep

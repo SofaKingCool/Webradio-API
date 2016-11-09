@@ -18,6 +18,8 @@ function redirect($url, $statusCode) {
     exit;
 }
 
+// Note: Store URL in a history array to avoid calling this functions
+// multiple times on the same URL wasting response time
 function alive($url) {
     $headers = get_headers($url, 1);
 
