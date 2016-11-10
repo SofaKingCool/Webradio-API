@@ -25,14 +25,27 @@ class Decoder
         }
 
         // Get the page content of the JavaScript base file of the YouTube player (contains signature decoder)
-        $javascriptFile = $this->getPlayerJavaScriptFile();
+        $javascriptFile = $this->getPlayerJavaScriptFile($videoId);
+
+        if (!$javascriptFile) {
+            return false;
+        }
 
         // Find the decoder function body in the JavaScript file
         $functionBody = $this->getDecoderFunctionBody($javascriptFile);
+
+        if (!$functionBody) {
+            return false;
+        }
+
         $groupName = substr($functionBody, 0, 2);
 
         // Decipher the function body and generate a correct algorithm pattern
         $pattern = $this->getDecoderAlgorithmPattern($groupName, $functionBody, $javascriptFile);
+
+        if (!$pattern) {
+            return false;
+        }
 
         // Swap:10;Reverse:3;Swap:29;Reverse:56;Swap:46;Reverse:46;Swap:10;Splice:2
         $this->cache->save($pattern);
@@ -54,9 +67,13 @@ class Decoder
         return file_get_contents($url);
     }
 
-    private function getPlayerJavaScriptFile()
+    private function getPlayerJavaScriptFile($videoId)
     {
         $videoPage = $this->getPageWithPlayerURL($videoId);
+
+        if ($videoPage === false) {
+            return false;
+        }
 
         // Use a regular expression to get the player id from the page body
         // <script src="//s.ytimg.com/yts/jsbin/player-{country_code}-{random_id}/base.js" name="player/base"></script>
