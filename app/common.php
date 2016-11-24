@@ -5,7 +5,7 @@
  */
 
 function input($name) {
-    return $_GET[$name] ?? null;
+    return isset($_GET[$name]) ? $_GET[$name] : null;
 }
 
 function error($errno, $error) {
