@@ -8,7 +8,7 @@ You need a web server like *nginx* or *apache* with PHP. The web server should s
 ### Installing
 Clone the repository to your disk, copy the `config.example.php` file as `config.php` in the *root*-directory and open it in an editor of your choice.
 
-Remove the default key in the two `$searchKeys` and `$streamKeys` arrays and add your own secret key strings to the array. There is no character limit on the keys and you can use any character, whitespace too. Example:
+Remove the default keys in the two `$searchKeys` and `$streamKeys` arrays and add your own secret key strings to the array. There is no character limit on the keys and you can use any character, whitespace too. Example:
 ```php
 $searchKeys = [
     "2JXR861JPWJ1CENHF51WA3QF3UK1I1QA", // You shouldn't use this one
@@ -44,18 +44,18 @@ Feel free to submit an issue here on GitHub to notify me about it, but don't ope
 
 ## Usage
 ### Search
-`/search.php?key=<a key from $keys>&service=YouTube&query=Bohemian+Rhapsody`  
-`/search.php?key=<a key from $keys>&service=Soundcloud&query=Adele+Hello`  
-`/search.php?key=<a key from $keys>&service=Jamendo&query=Sunshine`  
-`/search.php?key=<a key from $keys>&service=MyFreeMP3&query=We+Right+Here`  
-`/search.php?key=<a key from $keys>&service=MP3Library&query=Bob+Dylan`  
+`/search.php?key=<a key from $searchKeys>&service=YouTube&query=Bohemian+Rhapsody`  
+`/search.php?key=<a key from $searchKeys>&service=Soundcloud&query=Adele+Hello`  
+`/search.php?key=<a key from $searchKeys>&service=Jamendo&query=Sunshine`  
+`/search.php?key=<a key from $searchKeys>&service=MyFreeMP3&query=We+Right+Here`  
+`/search.php?key=<a key from $searchKeys>&service=MP3Library&query=Bob+Dylan`  
 
 ### Stream
-`/stream.php?key=<a key from $keys>&service=YouTube&id=<song id>`  
-`/stream.php?key=<a key from $keys>&service=Soundcloud&id=<song id>`  
-`/stream.php?key=<a key from $keys>&service=Jamendo&id=<song id>`  
-`/stream.php?key=<a key from $keys>&service=MyFreeMP3&id=<song id>`  
-`/stream.php?key=<a key from $keys>&service=MP3Library&id=<song id>`  
+`/stream.php?key=<a key from $streamKeys>&service=YouTube&id=<song id>`  
+`/stream.php?key=<a key from $streamKeys>&service=Soundcloud&id=<song id>`  
+`/stream.php?key=<a key from $streamKeys>&service=Jamendo&id=<song id>`  
+`/stream.php?key=<a key from $streamKeys>&service=MyFreeMP3&id=<song id>`  
+`/stream.php?key=<a key from $streamKeys>&service=MP3Library&id=<song id>`  
 
 ## Examples
 ### YouTube
