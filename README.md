@@ -34,7 +34,7 @@ Finally, you should add your private API keys for `YouTube`, `Soundcloud` and `J
 ### Cron: Cleanup
 You have to setup a cronjob to execute the clean up script to remove old files in the storage subdirectories.
 Please change the URL to the PHP script in this example to fit your environment.  
-`0 0 * * 0 /usr/bin/curl http://127.0.0.1/webradio-api/app/cleanup.php?key=<a key from $streamKeys> >/dev/null 2>&1`
+`0 0 * * 0 /usr/bin/curl http://127.0.0.1/webradio-api/cleanup.php?key=<a key from $streamKeys> >/dev/null 2>&1`
 
 ### Development
 You should set the `$debug_mode` variable in `config.php` to *true* if you want to receive the fine details of the exception whenever your application drops an `Out of Order` error.
