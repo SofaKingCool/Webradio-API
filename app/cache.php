@@ -51,12 +51,6 @@ class cache
         return (time() - filemtime($this->filepath)) < $this->maxAge;
     }
 
-    public function serve()
-    {
-        echo $this->get();
-        exit;
-    }
-
     public function get()
     {
         return file_get_contents($this->filepath);
@@ -65,5 +59,12 @@ class cache
     public function save($content)
     {
         file_put_contents($this->filepath, $content);
+    }
+
+    public function delete()
+    {
+        if (file_exists($this->filepath)) {
+            unlink($this->filepath);
+        }
     }
 }

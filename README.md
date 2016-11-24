@@ -8,12 +8,17 @@ You need a web server like *nginx* or *apache* with PHP. The web server should s
 ### Installing
 Clone the repository to your disk, copy the `config.example.php` file as `config.php` in the *root*-directory and open it in an editor of your choice.
 
-Remove the default key in the `$keys` array and add your own secret key strings to the array. There is no character limit on the keys and  you can use any character, whitespace too. Example:
+Remove the default key in the two `$searchKeys` and `$streamKeys` arrays and add your own secret key strings to the array. There is no character limit on the keys and you can use any character, whitespace too. Example:
 ```php
-$keys = [
+$searchKeys = [
     "2JXR861JPWJ1CENHF51WA3QF3UK1I1QA", // You shouldn't use this one
     "9LRAP2PIJRCDYTQL5844O2VV2QX3TCQ6", // Neither this one
     // ...
+];
+
+$streamKeys = [
+    "M97JY494ZONC", // Don't even think about using
+    "6Z3NRRU8YW56", // these exact keys in your application
 ];
 ```
 
@@ -32,6 +37,10 @@ You should set the `$debug_mode` variable in `config.php` to *true* if you want 
 ### Troubleshooting
 #### Permission denied for mkdir()
 Make sure your webserver user has enough permissions for writing in the **/storage** (sub-)directories.
+
+#### Many YouTube videos stopped working
+You might run into this issue everytime the YouTube's player JavaScript code changes the layout and the decoder can not figure out the decoding algorithm.
+Feel free to submit an issue here on GitHub to notify me about it, but don't open a new issue if there is already opened issue regarding this problem, please.
 
 ## Usage
 ### Search

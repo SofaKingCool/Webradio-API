@@ -3,8 +3,13 @@
 // Debug toggle
 $debug_mode = false;
 
-// List of keys you grant access to the entire API
-$keys = [
+// List of keys you grant access to the search API
+$searchKeys = [
+    "PLEASE-CHANGE-THIS-RANDOM-KEY",
+];
+
+// List of keys you grant access to the stream API
+$streamKeys = [
     "PLEASE-CHANGE-THIS-RANDOM-KEY",
 ];
 

@@ -17,6 +17,6 @@ class config
 
         $config = $configs[$service];
 
-        return $config[$key] ?? null;
+        return isset($config[$key]) ? $config[$key] : null;
     }
 }

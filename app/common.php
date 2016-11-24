@@ -18,9 +18,13 @@ function redirect($url, $statusCode) {
     exit;
 }
 
-// Note: Store URL in a history array to avoid calling this functions
-// multiple times on the same URL wasting response time
 function alive($url) {
+    static $history = [];
+
+    if (isset($history[$url])) {
+        return $history[$url];
+    }
+
     $headers = get_headers($url, 1);
 
     if (!$headers) {
@@ -28,6 +32,8 @@ function alive($url) {
     }
 
     $httpStatus = $headers[0];
+    $alive = stripos($httpStatus, "200 OK") !== false;
+    $history[$url] = $alive;
 
-    return stripos($httpStatus, "200 OK") !== false;
+    return $alive;
 }

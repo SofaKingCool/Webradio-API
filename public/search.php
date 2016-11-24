@@ -14,7 +14,8 @@ if (!$query || mb_strlen($query) < 3) {
 $cache = new cache("search", $query);
 
 if ($cache->has()) {
-    $cache->serve();
+    echo $cache->get();
+    exit;
 }
 
 // Produce an instance of the service class
