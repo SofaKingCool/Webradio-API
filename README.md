@@ -64,7 +64,7 @@ Feel free to submit an issue here on GitHub to notify me about it, but don't ope
 
 ## Examples
 ### YouTube
-`/search.php?query=Bohemian+Rhapsody&service=YouTube&key=<a key from $keys>`
+`/search.php?query=Bohemian+Rhapsody&service=YouTube&key=<a key from $searchKeys>`
 ```JSON
 [
   {
@@ -83,7 +83,7 @@ Feel free to submit an issue here on GitHub to notify me about it, but don't ope
 ```
 
 ### Soundcloud
-`/search.php?query=Adele+Hello&service=Soundcloud&key=<a key from $keys>`
+`/search.php?query=Adele+Hello&service=Soundcloud&key=<a key from $searchKeys>`
 ```JSON
 [
   {
