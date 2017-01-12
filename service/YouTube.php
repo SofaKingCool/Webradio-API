@@ -51,8 +51,7 @@ class YouTube
 
         $url .= http_build_query([
             "video_id" => $videoId,
-            "asv" => "3",
-            "el" => "detailpage",
+            "asv" => "3"
         ]);
 
         $video_info = array();
